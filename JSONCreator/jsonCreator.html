@@ -69,7 +69,7 @@
         }
       });
       $("#generate").click(function(){
-        dataobj.Title = $("#title").val();
+        dataobj.Title = "<a href='#'>"+$("#title").val()+"</a>";
         dataobj.TaskDescription = $("#description").val();
         dataobj.NeedHelp = [];
         var data = {};
@@ -77,6 +77,9 @@
           //dataobj.NeedHelp.push($("#Step"+i).serializeArray()); 
           var formdata = $("#Step"+i).serializeArray();
           $(formdata ).each(function(index, obj){
+            if(obj.name.slice(5) == "Title")
+              data[obj.name.slice(5)] = "<a href='#'>"+obj.value+"</a>";
+            else
               data[obj.name.slice(5)] = obj.value;
           }); 
           dataobj.NeedHelp.push(data);
