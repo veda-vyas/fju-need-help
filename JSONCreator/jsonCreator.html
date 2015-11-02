@@ -25,7 +25,7 @@
                 <br>
               </form>
               <form id="Step1" class="form">
-                  <input type="text" class="form-control" id="step1Title" name="step1TaskTitle" placeholder="Step-1 Title">
+                  <input type="text" class="form-control" id="step1Title" name="step1Title" placeholder="Step-1 Title">
                   <textarea id="step1Description" class="form-control" name="step1TaskDescription" placeholder="Enter Step-1 Description"></textarea>
                   <br>
               </form>
@@ -56,7 +56,7 @@
       var dataobj = {};
       $("#add").click(function(){
         count+=1;
-        $("#content").append('<form id="Step'+count+'" class="form"> <input type="text" class="form-control" name="Step'+count+'TaskTitle" id="step'+count+'Title" placeholder="Step-'+count+' Title"> <textarea name="Step'+count+'TaskDescription" id="step'+count+'Description" class="form-control" placeholder="Enter Step-'+count+' Description"></textarea> <br> </form>');
+        $("#content").append('<form id="Step'+count+'" class="form"> <input type="text" class="form-control" name="Step'+count+'Title" id="step'+count+'Title" placeholder="Step-'+count+' Title"> <textarea name="Step'+count+'TaskDescription" id="step'+count+'Description" class="form-control" placeholder="Enter Step-'+count+' Description"></textarea> <br> </form>');
         $("#delete").show();
       });
       $("#delete").click(function(){
@@ -87,7 +87,7 @@
        });
       $("#download").click(function(){
         console.log(myCodeMirror.getValue());
-        var name = $("#title").val() + ".json"
+        var name = $("#title").val().replace(/\s/g, "") + ".json"
         var content = myCodeMirror.getValue();
         var blob = new Blob([content], {
             type: "text/plain;charset=utf-8;",
