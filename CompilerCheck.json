@@ -1,0 +1,14 @@
+﻿{
+  "Title": "<a href='#'>Compiler Check</a>",
+  "TaskDescription": "This assignment is designed to make sure that the Java compiler (JDK) is correctly installed on your machine",
+  "NeedHelp": [
+    {
+      "Title": "<a href='#'>Open Terminal</a>",
+      "TaskDescription": "Path is 'Start Menu | All Programs | Accessories | Command Prompt'"
+    },
+    {
+      "Title": "<a href='#'>Typing Commands</a>",
+      "TaskDescription": "Type 'javac -version'. If it is correctly installed you should see version number like 'javac 1.7.0_04'. The exact version number doesn't matter, as long as it starts with 1.6 or higher. \\r\\nIf the JDK isn't installed, then you will see an error like \\r\\n'javac' is not recognized as an internal or external command, \\r\\noperable program or batch file."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+﻿{
+  "Title": "<a href='#'>Installing the Java Development Kit(JDK)</a>",
+  "TaskDescription": "First, you need the Java Development Kit (JDK) from Oracle. This is the actual compiler that your development environment (IDE) uses behind the scenes. Even if you already have Java installed, you probably still need this.",
+  "NeedHelp": [
+    {
+      "Title": "<a href='#'>Downloading JDK</a>",
+      "TaskDescription": "If your system is having operating system 'windows' go to website 'http://www.oracle.com/technetwork/java/javase/downloads/' and download 'Java Platform (JDK) 7u21' or new version and save this file.\\r\\nIf operating system is Mac OS X , JDK will be installed by default.\\r\\nIf operating system is Linux , type command 'sudo apt-get install sun-java6-jdk' in terminal to install JDK."
+    },
+    {
+      "Title": "<a href='#'>Installing JDK</a>",
+      "TaskDescription": "Once downloaded, run the executable. Follow the prompts to install the JDK. You'll need administrator access."
+    },
+    {
+      "Title": "<a href='#'>Setting Environment Variable</a>",
+      "TaskDescription": "You'll need to set an environment variable so that the command prompt can find the java compiler.\\r\\nSelect 'Start -> Computer -> System Properties -> Advanced system settings -> Environment Variables -> System variables -> Path'.\\r\\nPath is the location where jdk file located.\\r\\nOnce done close three times to complete set up."
+    }
+  ]
+}

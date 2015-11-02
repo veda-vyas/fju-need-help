@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
   <meta charset="utf-8">
   <html lang="en">
     <head>
@@ -28,12 +28,13 @@
                  <th>Name of the Assignment</th>
                </tr>
             </thead>
-            <tbody>
-            	<tr>
-            		<td>1)</td>
-            		<td><a href="MyCalendar.html">My Calendar</a></td>
-            	</tr>
-            </tbody>
+            <tbody id="tbody"></tbody>
          </table>
     </body>
+    <script type="text/javascript">
+    var arr = ['CompilerCheck', 'InstallingtheJavaDevelopmentKit(JDK)', 'MyCalendar']
+    for (var i=1; i<=arr.length; i++){
+      $("#tbody").append('<tr> <td>'+i+')</td> <td><a href="'+arr[i-1].replace(/\s/g, "")+'.html">'+arr[i-1]+'</a></td> </tr>');
+    }
+   </script>
   </html>

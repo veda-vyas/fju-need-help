@@ -1,4 +1,14 @@
-<!DOCTYPE html>
+import os
+root = './'
+arr = []
+for item in os.listdir(root):
+    if os.path.isfile(os.path.join(root, item)):
+        if item.endswith('.json'):
+            arr.append(item[:-5])
+            print arr
+            if os.path.isfile(item[:-5]+'.html') == False:
+                f = open(item[:-5]+'.html','w')
+                message = """<!DOCTYPE html>
           <meta charset="utf-8">
           <html lang="en">
             <head>
@@ -48,8 +58,53 @@
             </body>
             <script type="text/javascript" src="parser.js"></script>
             <script type="text/javascript">
-                $.getJSON( 'My Calendar.json', function( data ) {
+                $.getJSON( '"""+item+"""', function( data ) {
                   parser(data);
                 });
             </script>
-          </html>
+          </html>"""
+                f.write(message)
+                f.close()
+            g = open('Course_page.html','w')
+            message = """<!DOCTYPE html>
+  <meta charset="utf-8">
+  <html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <script src="jquery.min.js"></script>
+        <script src="jquery-ui.js"></script>
+    </head>
+    <style type="text/css">
+        a {
+            color:#000000 !important;
+            text-decoration:none;
+          }
+          a:hover{
+            text-decoration:none;
+          }
+    </style>
+    <body class="container">
+    	<br>
+		<table class="table table-responsive">
+            <thead>
+               <tr>
+                 <th>S.No</th>
+                 <th>Name of the Assignment</th>
+               </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+         </table>
+    </body>
+    <script type="text/javascript">
+    var arr = """+str(arr)+"""
+    for (var i=1; i<=arr.length; i++){
+      $("#tbody").append('<tr> <td>'+i+')</td> <td><a href="'+arr[i-1].replace(/\s/g, "")+'.html">'+arr[i-1]+'</a></td> </tr>');
+    }
+   </script>
+  </html>"""
+            g.write(message)
+            g.close()    
